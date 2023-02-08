@@ -1,5 +1,7 @@
 # CMSC 447: HW 2 (CRUD Web App)
 
+![Home Screen](static/home.PNG)
+
 I used a virual environment to install Flask and SQLAlchemy. It can be replicated with the following commands:
 
 - `python3 -m venv hw2`: Create a virtual environment called *hw2*

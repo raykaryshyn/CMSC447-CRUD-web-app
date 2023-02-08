@@ -3,20 +3,22 @@
 {% set title = "Home" %}
 {% set heading = "Students" %}
 {% block content %}
-<table class="table table-striped table-hover">
-    <tr class="table-primary" style="font-weight: bold;">
-        <th>ID</th>
-        <th>Name</th>
-        <th>Score</th>
-        <th>Edit Link</th>
-    </tr>
-    {% for student in students %}
-    <tr>
-        <td>{{student.id}}</td>
-        <td>{{student.name}}</td>
-        <td>{{student.score}}</td>
-        <td><a style="color: var(--bs-info)" href="/edit/{{student.id}}">Edit</a></td>
-    </tr>
-    {% endfor %}
-</table>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-sm">
+        <tr class="table-primary" style="font-weight: bold;">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Edit&nbsp;Link</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.score}}</td>
+            <td><a style="color: var(--bs-info)" href="/edit/{{student.id}}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 {% endblock %}

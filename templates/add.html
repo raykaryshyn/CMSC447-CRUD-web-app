@@ -1,11 +1,30 @@
 {% extends "layout.html" %}
+{% set active_page = "add" %}
+{% set title = "Add" %}
+{% set heading = "Add Student" %}
 {% block content %}
-<h1>Add</h1>
-
 <form method="POST">
-    Name: <input type="text" name="name" required></input>
-    ID: <input type="number" name="id" required></input>
-    Score: <input type="number" name="score" required></input>
-    <input type="submit" value="Add"></input>
+    <div class="form-floating mb-3">
+        <input type="text" name="name" class="form-control" placeholder="Name" id="floatingName" required>
+        <label for="floatingName">Name</label>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="number" name="id" class="form-control" placeholder="ID" id="floatingID" required>
+                <label for="floatingID">ID</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="number" name="score" class="form-control" placeholder="Score" id="floatingScore" required>
+                <label for="floatingScore">Score</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-grid gap-2">
+        <input type="submit" class="btn btn-primary btn-lg" value="Add"></input>
+    </div>
 </form>
 {% endblock %}

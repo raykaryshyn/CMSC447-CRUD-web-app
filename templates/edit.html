@@ -1,17 +1,37 @@
 {% extends "layout.html" %}
+{% set title = "Edit" %}
+{% set heading = "Edit Student" %}
 {% block content %}
-<h1>Edit</h1>
-
 <form method="POST">
-    Name: <input type="text" name="name" value="{{student.name}}" required></input>
-    ID: <input type="number" name="id" value="{{student.id}}" required></input>
-    Score: <input type="number" name="score" value="{{student.score}}" required></input>
-    <input type="submit" value="Apply Edits"></input>
+    <div class="form-floating mb-3">
+        <input type="text" name="name" class="form-control" placeholder="Name" id="floatingName"
+            value="{{student.name}}" required>
+        <label for="floatingName">Name</label>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="number" name="id" class="form-control" placeholder="ID" id="floatingID"
+                    value="{{student.id}}" required>
+                <label for="floatingID">ID</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="number" name="score" class="form-control" placeholder="Score" id="floatingScore"
+                    value="{{student.score}}" required>
+                <label for="floatingScore">Score</label>
+            </div>
+        </div>
+    </div>
+    <div class="d-grid gap-2 mb-3">
+        <input type="submit" value="Apply Edits" class="btn btn-primary btn-lg"></input>
+    </div>
 </form>
 
-<hr />
-
 <form method="POST" action="../delete/{{student.id}}">
-    <input type="submit" value="Delete Student"></input>
+    <div class="d-grid gap-2">
+        <input type="submit" value="Delete Student" class="btn btn-danger btn-sm"></input>
+    </div>
 </form>
 {% endblock %}

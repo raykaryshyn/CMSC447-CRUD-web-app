@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Edit</h1>
+
+<form method="POST">
+    Name: <input type="text" name="name" value="{{student.name}}" required></input>
+    ID: <input type="number" name="id" value="{{student.id}}" required></input>
+    Score: <input type="number" name="score" value="{{student.score}}" required></input>
+    <input type="submit" value="Apply Edits"></input>
+</form>
+
+<hr />
+
+<form method="POST" action="../delete/{{student.id}}">
+    <input type="submit" value="Delete Student"></input>
+</form>
+{% endblock %}
